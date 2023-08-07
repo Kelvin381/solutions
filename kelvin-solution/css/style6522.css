@@ -1,0 +1,379 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background: #fff;
+}
+
+a {
+    color: #ff6600;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+:root {
+    --primary-color: #ff6600;
+    --dark-primary-color: #063e01;
+    --text-color: #1a1a1a;
+    --max-width: 2048px;
+}
+
+.scroll-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 40px;
+    bottom: -50px;
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(green, blue);
+    border: 1px solid #ccc;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    box-shadow: 0px 0px 20px -5px #ccc;
+}
+
+.floating-action .scroll-to-top {
+    opacity: 0.8;
+    bottom: 40px;
+}
+
+
+/* Pagination */
+
+.pagination {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pagination .screen-reader-text {
+    display: none;
+}
+
+.pagination .page-numbers,
+.pagination .next,
+.pagination .prev {
+    font-weight: 400;
+    font-size: 13px;
+    background: #fff;
+    color: #777;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    margin: 5px 2px;
+}
+
+.pagination .page-numbers:hover,
+.pagination .next:hover,
+.pagination .prev:hover {
+    border-color: #ff6600;
+    color: #ff6600;
+}
+
+.pagination .dots {
+    background: transparent;
+    color: #ccc;
+    font-size: 1.5em;
+    border: none;
+}
+
+.pagination .current {
+    background: #ff6600;
+    color: #fff;
+}
+
+.pagination .current:hover {
+    background: #91d32775;
+}
+
+
+/* Form */
+
+.form-page {
+    padding: 25px 0px;
+}
+
+form {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0px 0px 20px -5px #ccc;
+}
+
+form h2 {
+    font-size: 20px;
+    text-align: center;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+form input,
+form select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+    border: none;
+    padding: 8px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+form input[type="checkbox"] {
+    width: unset;
+    padding: 0px;
+    margin: 0px;
+    align-self: center;
+}
+
+form .terms {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+form .terms label {
+    flex: 1;
+    margin-left: 4px;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    background: #ff6600;
+    color: #fff;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-response {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.form-response span {
+    background: #080;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.form-response span.error {
+    background: #900;
+}
+
+.form-loader {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #2226;
+}
+
+.form-loader::before {
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #2226;
+    border-top-color: var(--primary-color);
+    animation: form_loader 0.5s linear infinite;
+}
+
+@keyframes form_loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-withdrawal {
+    display: block;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: unset;
+    opacity: 1;
+    animation: fade_form 0.5s ease-in-out;
+}
+
+.profile-withdrawal h2 {
+    width: 100%;
+}
+
+.profile-withdrawal input:nth-child(6) {
+    width: 100%;
+    flex: unset;
+}
+
+.profile-page .sponsored-post form {
+    visibility: hidden;
+    position: absolute;
+}
+
+.profile-page .sponsored-post {
+    background: #222;
+    border-radius: 3px;
+}
+
+.profile-page .sponsored-post article {
+    display: flex;
+    padding: 15px;
+    position: relative;
+}
+
+.profile-page .sponsored-post article img {
+    width: 100px;
+    height: 80px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.profile-page .sponsored-post article h2 {
+    color: #fff;
+    font-size: 16px;
+    flex: 1;
+}
+
+.profile-page .sponsored-post .lofty-share {
+    background: #090;
+    color: #fff;
+    padding: 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.profile-page .sponsored-post .lofty-share span {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.profile-page .sponsored-post .lofty-share i {
+    margin-left: 6px;
+}
+
+.profile-page .sponsored-post .share-box {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    height: 0px;
+    top: -25px;
+    right: 0px;
+    background: #ff6600;
+    color: #fff;
+    padding: 0px;
+    border-radius: 3px;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.profile-page .sponsored-post .share-box a {
+    color: #fff;
+}
+
+.profile-page .more-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    margin-top: 10px;
+    padding: 0px 15px;
+    background: #000;
+}
+
+.profile-page .more-info .toggle-info {
+    width: 20px;
+    cursor: pointer;
+}
+
+.profile-page .more-info .toggle-info span,
+.profile-page .more-info .toggle-info::before,
+.profile-page .more-info .toggle-info::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+}
+
+.profile-page .more-info .toggle-info span {
+    margin: 3px 0px;
+}
+
+.profile-page .more-info-nav {
+    display: none;
+    background: #222;
+}
+
+.profile-page .more-info-nav ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px solid #483113;
+    color: #fff;
+}
+
+.profile-page .more-info-nav ul li span:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+@keyframes fade_form {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
